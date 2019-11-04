@@ -138,6 +138,10 @@ public class Home extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
+        } else if (id == R.id.nav_search) {
+            Intent intent = new Intent(Home.this, SearchProductsActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_products) {
             Intent intent = new Intent(Home.this, ProductScreen.class);
             startActivity(intent);

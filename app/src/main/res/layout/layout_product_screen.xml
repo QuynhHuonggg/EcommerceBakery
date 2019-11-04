@@ -10,28 +10,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <!--<RelativeLayout-->
-            <!--android:id="@+id/menuBar"-->
-            <!--android:layout_weight="0"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="48dp"-->
-            <!--android:layout_alignParentTop="true"-->
-            <!--android:background="@color/dark_green"-->
-            <!--android:splitMotionEvents="false">-->
-        <!---->
-            <!--<TextView-->
-                <!--android:id="@+id/title"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="34dp"-->
-                <!--android:layout_centerInParent="true"-->
-                <!--android:text="Gift Cake"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textSize="20dp"-->
-                <!--android:textStyle="bold" />-->
-            <!---->
-        <!--</RelativeLayout>-->
-
         <RelativeLayout
             android:background="@color/dark_green"
             android:splitMotionEvents="false"
@@ -81,19 +59,20 @@
 
         </RelativeLayout>
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:queryHint="Search Here"
-            android:iconifiedByDefault="false"
-            android:layout_alignParentTop="true">
-        </SearchView>
+        <!--<SearchView-->
+            <!--android:id="@+id/searchView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:queryHint="Search Here"-->
+            <!--android:iconifiedByDefault="false"-->
+            <!--android:layout_alignParentTop="true">-->
+        <!--</SearchView>-->
 
         <ViewFlipper
             android:id="@+id/viewFipperCake"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="-5dp"
             android:background="@drawable/backgroundcake3">
         </ViewFlipper>
 
