@@ -25,7 +25,7 @@
     <color name="gray500">#9E9E9E</color>
     <color name="light_green">#DEFABB</color>
     <color name="chill">#FAF7BB</color>
-
+    <color name="green_a200">#B2FF59</color>
 
     <color name="edit_text_highlight_color">@color/green2</color>
 </resources>

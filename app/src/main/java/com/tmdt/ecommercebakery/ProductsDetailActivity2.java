@@ -32,7 +32,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class ProductsDetailActivity extends AppCompatActivity {
+public class ProductsDetailActivity2 extends AppCompatActivity {
 
     private Button addToCartButton;
     private ImageButton btnBack;
@@ -47,7 +47,7 @@ public class ProductsDetailActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products_detail);
+        setContentView(R.layout.activity_products_detail2);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -138,9 +138,9 @@ public class ProductsDetailActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(ProductsDetailActivity.this, "Added to Cart List", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ProductsDetailActivity2.this, "Added to Cart List", Toast.LENGTH_SHORT).show();
 
-                                                Intent intent = new Intent(ProductsDetailActivity.this, ProductScreen.class);
+                                                Intent intent = new Intent(ProductsDetailActivity2.this, CartActivity.class);
                                                 startActivity(intent);
                                             }
                                         }
@@ -155,8 +155,7 @@ public class ProductsDetailActivity extends AppCompatActivity {
 
     private void getProductDetails(String productID) {
 
-        //them cho nay
-        DatabaseReference producsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Cake");
+        DatabaseReference producsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Crossant");
 
         producsRef.child(productID).addValueEventListener(new ValueEventListener() {
             @Override

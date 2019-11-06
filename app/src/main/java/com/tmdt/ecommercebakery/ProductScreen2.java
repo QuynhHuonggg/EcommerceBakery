@@ -26,7 +26,7 @@ import com.tmdt.ecommercebakery.Model.Cart;
 import com.tmdt.ecommercebakery.Model.Products;
 import com.tmdt.ecommercebakery.ViewHolder.ProductViewHolder;
 
-public class ProductScreen extends AppCompatActivity {
+public class ProductScreen2 extends AppCompatActivity {
 
     ImageButton BackButton;
 
@@ -41,7 +41,7 @@ public class ProductScreen extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_product_screen);
+        setContentView(R.layout.layout_product_screen2);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -55,46 +55,46 @@ public class ProductScreen extends AppCompatActivity {
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, Home.class);
+                Intent intent = new Intent(ProductScreen2.this, Home.class);
                 startActivity(intent);
                 finish();
             }
         });
+        btnCake = findViewById(R.id.btnCake);
 
-        btnCroissant = findViewById(R.id.btnCroissant);
-
-        btnCroissant.setOnClickListener(new View.OnClickListener() {
+        btnCake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
+                Intent intent = new Intent(ProductScreen2.this, ProductScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         btnLightMeal = findViewById(R.id.btnLightMeal);
 
         btnLightMeal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, ProductScreen3.class);
-                startActivity(intent);
-            }
-        });
+                                            @Override
+                                            public void onClick(View view) {
+                                                Intent intent = new Intent(ProductScreen2.this, ProductScreen3.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        });
 
         btnDessert = findViewById(R.id.btnDessert);
 
         btnDessert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, ProductScreen4.class);
+                Intent intent = new Intent(ProductScreen2.this, ProductScreen4.class);
                 startActivity(intent);
+                finish();
             }
         });
 
-
-
         //sửa chỗ này
-        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Cake");
+        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Crossant");
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
@@ -105,7 +105,7 @@ public class ProductScreen extends AppCompatActivity {
         BtnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, CartActivity.class);
+                Intent intent = new Intent(ProductScreen2.this, CartActivity.class);
                 startActivity(intent);
             }
         });
@@ -132,7 +132,7 @@ public class ProductScreen extends AppCompatActivity {
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Intent intent = new Intent(ProductScreen.this, ProductsDetailActivity.class);
+                                Intent intent = new Intent(ProductScreen2.this, ProductsDetailActivity2.class);
                                 intent.putExtra("pid", model.getPid());
                                 startActivity(intent);
                             }
