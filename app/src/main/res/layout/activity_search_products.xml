@@ -38,14 +38,15 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-    <SearchView
+    <EditText
         android:id="@+id/search_product_name"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_below="@id/toolbar"
-        android:queryHint="Search Here"
+        android:hint="Search product"
         android:iconifiedByDefault="false">
-    </SearchView>
+    </EditText>
 
     <Button
         android:id="@+id/search_btn"
