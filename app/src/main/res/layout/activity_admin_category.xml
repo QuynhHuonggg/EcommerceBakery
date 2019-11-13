@@ -31,6 +31,8 @@
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_admin_check_orders" />
 
+
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -57,7 +59,17 @@
             android:scaleType="center"
             app:srcCompat="@drawable/ic_admin_logout" />
     </RelativeLayout>
-
+    <ImageButton
+        android:id="@+id/admin_maintain"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/menuBar"
+        android:layout_height="@dimen/home_btn_menu_height"
+        android:background="@null"
+        android:paddingLeft="@dimen/home_btn_menu_padding"
+        android:paddingTop="@dimen/home_btn_menu_padding"
+        android:paddingBottom="@dimen/home_btn_menu_padding"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_dvr_black_24dp" />
 
 
     <!--DANH MỤC-->

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -35,6 +36,11 @@ public class ProductScreen2 extends AppCompatActivity {
     ImageButton BtnCart;
     Button btnCake, btnCroissant, btnLightMeal, btnDessert;
     RecyclerView.LayoutManager layoutManager;
+
+    private EditText inputText;
+    private Button SearchBtn;
+    private RecyclerView searchList;
+    private String SearchInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +98,19 @@ public class ProductScreen2 extends AppCompatActivity {
                 finish();
             }
         });
+//////////
+        inputText = findViewById(R.id.search_product_name);
+        SearchBtn = findViewById(R.id.search_btn);
+        searchList = findViewById(R.id.recycler_menu);
+        searchList.setLayoutManager(new LinearLayoutManager(ProductScreen2.this));
 
+        SearchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SearchInput = inputText.getText().toString();
+                onStart();
+            }
+        });//////////
         //sửa chỗ này
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Crossant");
 
@@ -115,9 +133,11 @@ public class ProductScreen2 extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Products");
+
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(ProductsRef, Products.class)
+                        .setQuery(reference.child("Crossant").orderByChild("pname").startAt(SearchInput).endAt(SearchInput + "\uf8ff"), Products.class)
                         .build();
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =

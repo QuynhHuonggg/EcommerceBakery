@@ -16,7 +16,7 @@ public class AdminCategory extends AppCompatActivity {
 
     private ImageView imgCake,  imgCrossant;
     private ImageView imgLightmeal, imgDessert;
-    private ImageButton LogoutBtn, CheckOrdersBtn;
+    private ImageButton LogoutBtn, CheckOrdersBtn, maintainProductBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,20 @@ public class AdminCategory extends AppCompatActivity {
         imgDessert = (ImageView)findViewById(R.id.imgDessert);
         LogoutBtn = findViewById(R.id.admin_logout);
         CheckOrdersBtn = findViewById(R.id.admin_check_orders);
+
+        //Admin-Maintain
+        maintainProductBtn = findViewById(R.id.admin_maintain);
+        maintainProductBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategory.this, ProductScreen.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
+
+
 
         imgCake.setOnClickListener(new View.OnClickListener() {
             @Override

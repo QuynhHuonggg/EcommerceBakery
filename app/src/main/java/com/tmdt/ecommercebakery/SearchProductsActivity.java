@@ -37,8 +37,8 @@ public class SearchProductsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-         requestWindowFeature(Window.FEATURE_NO_TITLE);
-         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_products);
@@ -82,12 +82,12 @@ public class SearchProductsActivity extends AppCompatActivity {
 
         super.onStart();
 
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Products");
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Products").child("Cake");
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                .setQuery(reference.child("Cake").orderByChild("pname").startAt(SearchInput), Products.class)
-                .build();
+                        .setQuery(reference.orderByChild("pname").startAt(SearchInput).endAt(SearchInput + "\uf8ff"), Products.class)
+                        .build();
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
@@ -121,5 +121,5 @@ public class SearchProductsActivity extends AppCompatActivity {
 
         searchList.setAdapter(adapter);
         adapter.startListening();
-   }
+    }
 }
