@@ -84,6 +84,7 @@
     <string name="menu_send">Send</string>
 
     <string name="new_product_title">New Product</string>
+    <string name="detail_product_title">Product Detail</string>
     <string name="product">PRODUCT</string>
     <string name="enter_product">Enter product</string>
     <string name="description">DESCRIPTION</string>
