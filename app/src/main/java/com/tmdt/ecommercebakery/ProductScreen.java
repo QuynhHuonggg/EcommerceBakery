@@ -53,6 +53,7 @@ public class ProductScreen extends AppCompatActivity {
         setContentView(R.layout.layout_product_screen);
 
 
+
         //Admin-Maintain
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -61,6 +62,17 @@ public class ProductScreen extends AppCompatActivity {
             type = getIntent().getExtras().get("Admin").toString();
         }
 
+        //Admin-Maintain
+        btnCroissant = findViewById(R.id.btnCroissant);
+        btnCroissant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
 
 
         ///
@@ -87,8 +99,8 @@ public class ProductScreen extends AppCompatActivity {
         btnCroissant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
-                startActivity(intent);
+                    Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
+                    startActivity(intent);
             }
         });
 
@@ -112,7 +124,7 @@ public class ProductScreen extends AppCompatActivity {
             }
         });
 
-        //////////
+        /// Search
         inputText = findViewById(R.id.search_product_name);
         SearchBtn = findViewById(R.id.search_btn);
         searchList = findViewById(R.id.recycler_menu);

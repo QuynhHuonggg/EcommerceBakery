@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
-public class AdminMaintainProductsActivity extends AppCompatActivity {
+public class AdminMaintainProductsActivity2 extends AppCompatActivity {
 
     private Button applyChangesBtn, deleteBtn;
     private ImageButton backBtn;
@@ -40,9 +40,9 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_maintain_products);
 
         productID = getIntent().getStringExtra("pid");
-        productsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Cake").child(productID);
+        productsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Crossant").child(productID);
 
-        
+
 
         applyChangesBtn = (Button)findViewById(R.id.ally_changes_btn);
         name = (EditText)findViewById(R.id.product_name_maintain);
@@ -54,7 +54,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategory.class);
+                Intent intent = new Intent(AdminMaintainProductsActivity2.this, AdminCategory.class);
                 startActivity(intent);
                 finish();
             }
@@ -86,12 +86,12 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategory.class);
+                Intent intent = new Intent(AdminMaintainProductsActivity2.this, AdminCategory.class);
                 startActivity(intent);
                 finish();
 
 
-                Toast.makeText(AdminMaintainProductsActivity.this,"Delete Successfully !!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminMaintainProductsActivity2.this,"Delete Successfully !!!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -126,9 +126,9 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(AdminMaintainProductsActivity.this,"Changes applied successfully!!!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AdminMaintainProductsActivity2.this,"Changes applied successfully!!!!", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategory.class);
+                        Intent intent = new Intent(AdminMaintainProductsActivity2.this, AdminCategory.class);
                         startActivity(intent);
                         finish();
 

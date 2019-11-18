@@ -56,6 +56,10 @@ public class Home extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_home);
 
+
+
+
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         ActionBar actionBar = getSupportActionBar();

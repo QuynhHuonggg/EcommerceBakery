@@ -22,6 +22,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 import com.tmdt.ecommercebakery.Model.Cart;
 import com.tmdt.ecommercebakery.Model.Products;
@@ -34,13 +35,15 @@ public class ProductScreen2 extends AppCompatActivity {
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
     ImageButton BtnCart;
-    Button btnCake, btnCroissant, btnLightMeal, btnDessert;
+    Button  btnCroissant, btnLightMeal, btnDessert, btnCake;
     RecyclerView.LayoutManager layoutManager;
 
     private EditText inputText;
     private Button SearchBtn;
     private RecyclerView searchList;
     private String SearchInput;
+
+    private String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,30 @@ public class ProductScreen2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_product_screen2);
 
+
+
+        //Admin-Maintain
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null)
+        {
+            type = getIntent().getExtras().get("Admin").toString();
+        }
+
+        //Admin-Maintain
+        btnLightMeal = findViewById(R.id.btnLightMeal);
+        btnLightMeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen2.this, ProductScreen3.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
+
+
+        ///
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         ActionBar actionBar = getSupportActionBar();
@@ -66,6 +93,7 @@ public class ProductScreen2 extends AppCompatActivity {
                 finish();
             }
         });
+
         btnCake = findViewById(R.id.btnCake);
 
         btnCake.setOnClickListener(new View.OnClickListener() {
@@ -73,20 +101,27 @@ public class ProductScreen2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProductScreen2.this, ProductScreen.class);
                 startActivity(intent);
-                finish();
+            }
+        });
+        btnCroissant = findViewById(R.id.btnCroissant);
+
+        btnCroissant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen2.this, ProductScreen2.class);
+                startActivity(intent);
             }
         });
 
         btnLightMeal = findViewById(R.id.btnLightMeal);
 
         btnLightMeal.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View view) {
-                                                Intent intent = new Intent(ProductScreen2.this, ProductScreen3.class);
-                                                startActivity(intent);
-                                                finish();
-                                            }
-                                        });
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen2.this, ProductScreen3.class);
+                startActivity(intent);
+            }
+        });
 
         btnDessert = findViewById(R.id.btnDessert);
 
@@ -95,10 +130,10 @@ public class ProductScreen2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProductScreen2.this, ProductScreen4.class);
                 startActivity(intent);
-                finish();
             }
         });
-//////////
+
+        /// Search
         inputText = findViewById(R.id.search_product_name);
         SearchBtn = findViewById(R.id.search_btn);
         searchList = findViewById(R.id.recycler_menu);
@@ -111,8 +146,9 @@ public class ProductScreen2 extends AppCompatActivity {
                 onStart();
             }
         });//////////
+
         //sửa chỗ này
-        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products").child("Crossant");
+        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
@@ -129,15 +165,17 @@ public class ProductScreen2 extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
 
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Products");
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Products").child("Crossant");
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(reference.child("Crossant").orderByChild("pname").startAt(SearchInput).endAt(SearchInput + "\uf8ff"), Products.class)
+                        .setQuery(reference.orderByChild("pname").startAt(SearchInput).endAt(SearchInput + "\uf8ff"), Products.class)
                         .build();
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
@@ -149,12 +187,21 @@ public class ProductScreen2 extends AppCompatActivity {
                         holder.txtProductPrice.setText("Price: " + model.getPrice() + "VND");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
+                        //Admin-Maintain
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Intent intent = new Intent(ProductScreen2.this, ProductsDetailActivity2.class);
-                                intent.putExtra("pid", model.getPid());
-                                startActivity(intent);
+                                if(type.equals("Admin"))
+                                {
+                                    Intent intent = new Intent(ProductScreen2.this, AdminMaintainProductsActivity2.class);
+                                    intent.putExtra("pid", model.getPid());
+                                    startActivity(intent);
+                                }else{
+                                    Intent intent = new Intent(ProductScreen2.this, ProductsDetailActivity2.class);
+                                    intent.putExtra("pid", model.getPid());
+                                    startActivity(intent);
+                                }
+
                             }
                         });
                     }
