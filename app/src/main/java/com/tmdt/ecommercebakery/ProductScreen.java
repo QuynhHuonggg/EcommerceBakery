@@ -35,6 +35,7 @@ public class ProductScreen extends AppCompatActivity {
     ImageButton BtnCart;
     Button btnCake, btnCroissant, btnLightMeal, btnDessert;
     RecyclerView.LayoutManager layoutManager;
+    private String CategoryName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class ProductScreen extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+        
 
         BackButton = findViewById(R.id.back);
 

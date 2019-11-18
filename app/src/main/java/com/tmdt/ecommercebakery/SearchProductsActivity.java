@@ -35,6 +35,7 @@ public class SearchProductsActivity extends AppCompatActivity {
     private RecyclerView searchList;
     private String SearchInput;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
          requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -51,6 +52,7 @@ public class SearchProductsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
 
         btnBack = findViewById(R.id.back);
 
