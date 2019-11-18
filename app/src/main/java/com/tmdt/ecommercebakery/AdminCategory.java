@@ -16,7 +16,7 @@ public class AdminCategory extends AppCompatActivity {
 
     private ImageView imgCake,  imgCrossant;
     private ImageView imgLightmeal, imgDessert;
-    private ImageButton LogoutBtn, CheckOrdersBtn;
+    private ImageButton LogoutBtn, CheckOrdersBtn, maintainProductBtn, maintainProductBtn2, maintainProductBtn3, maintainProductBtn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,55 @@ public class AdminCategory extends AppCompatActivity {
         imgDessert = (ImageView)findViewById(R.id.imgDessert);
         LogoutBtn = findViewById(R.id.admin_logout);
         CheckOrdersBtn = findViewById(R.id.admin_check_orders);
+
+        //Admin-Maintain Cake
+        maintainProductBtn = findViewById(R.id.admin_maintain);
+        maintainProductBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategory.this, ProductScreen.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
+        //Admin-Maintain Crossant
+        maintainProductBtn2 = findViewById(R.id.admin_maintain2);
+        maintainProductBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategory.this, ProductScreen2.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
+        //Admin-Maintain LightMeal
+        maintainProductBtn3 = findViewById(R.id.admin_maintain3);
+        maintainProductBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategory.this, ProductScreen3.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
+        //Admin-Maintain LightMeal
+        maintainProductBtn4 = findViewById(R.id.admin_maintain4);
+        maintainProductBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategory.this, ProductScreen4.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
 
         imgCake.setOnClickListener(new View.OnClickListener() {
             @Override

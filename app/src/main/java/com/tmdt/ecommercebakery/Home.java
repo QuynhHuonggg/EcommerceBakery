@@ -47,6 +47,7 @@ import io.paperdb.Paper;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,10 @@ public class Home extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_home);
+
+
+
+
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -91,10 +96,15 @@ public class Home extends AppCompatActivity
         TextView emailTextView = headerView.findViewById(R.id.nav_email);
         CircleImageView profileImageView = headerView.findViewById(R.id.nav_avatar);
 
-        userNameTextView.setText(Prevalent.currentOnlineUser.getName());
-        emailTextView.setText(Prevalent.currentOnlineUser.getEmail());
+        if (!type.equals("Admin"))
+        {
+            userNameTextView.setText(Prevalent.currentOnlineUser.getName());
+            emailTextView.setText(Prevalent.currentOnlineUser.getEmail());
 
-        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.no_avatar).into(profileImageView);
+            Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.no_avatar).into(profileImageView);
+        }
+
+
     }
 
 

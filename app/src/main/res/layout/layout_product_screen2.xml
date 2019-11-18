@@ -67,7 +67,32 @@
         <!--android:iconifiedByDefault="false"-->
         <!--android:layout_alignParentTop="true">-->
         <!--</SearchView>-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/search_product_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_below="@id/toolbar"
+                android:hint="Search product"
+                android:iconifiedByDefault="false">
+            </EditText>
+            <Button
+                android:id="@+id/search_btn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
 
+                android:layout_below="@id/toolbar"
+                android:layout_toRightOf="@id/search_product_name"
+                android:text="Search"
+                android:textColor="@color/dark_green"
+                android:background="@drawable/transparent_bg_bordered_button"/>
+        </LinearLayout>
         <ViewFlipper
             android:id="@+id/viewFipperCake"
             android:layout_width="match_parent"
@@ -92,7 +117,7 @@
                 android:text="Cake"
                 android:textSize="12dp"
                 android:textColor="@color/black"
-                android:background="@color/light_green"/>
+                android:background="@color/green_a200"/>
             <Button
                 android:id="@+id/btnCroissant"
                 android:layout_marginTop="10dp"
@@ -102,7 +127,7 @@
                 android:text="Croissant"
                 android:textSize="12dp"
                 android:textColor="@color/black"
-                android:background="@color/green_a200"/>
+                android:background="@color/light_green"/>
             <Button
                 android:id="@+id/btnLightMeal"
                 android:layout_marginTop="10dp"
@@ -112,7 +137,7 @@
                 android:text="LightMeal"
                 android:textSize="12dp"
                 android:textColor="@color/black"
-                android:background="@color/light_green"/>
+                android:background="@color/green_a200"/>
             <Button
                 android:id="@+id/btnDessert"
                 android:layout_marginTop="10dp"
@@ -122,7 +147,7 @@
                 android:text="Dessert"
                 android:textSize="12dp"
                 android:textColor="@color/black"
-                android:background="@color/light_green"/>
+                android:background="@color/green_a200"/>
         </LinearLayout>
 
         <GridLayout
