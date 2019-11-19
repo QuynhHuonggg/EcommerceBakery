@@ -58,8 +58,6 @@ public class Home extends AppCompatActivity
 
 
 
-
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         ActionBar actionBar = getSupportActionBar();
