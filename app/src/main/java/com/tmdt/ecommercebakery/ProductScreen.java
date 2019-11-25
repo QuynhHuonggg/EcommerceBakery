@@ -38,6 +38,7 @@ public class ProductScreen extends AppCompatActivity {
     ImageButton BtnCart;
     Button  btnCroissant, btnLightMeal, btnDessert;
     RecyclerView.LayoutManager layoutManager;
+    private String CategoryName;
 
     private EditText inputText;
     private Button SearchBtn;
@@ -85,6 +86,7 @@ public class ProductScreen extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+        
 
         //Admin-Maintain
         BackButton = findViewById(R.id.back);

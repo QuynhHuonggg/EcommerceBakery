@@ -45,7 +45,7 @@
     <ImageView
         android:id="@+id/product_image_maintain"
         android:layout_width="400dp"
-        android:layout_height="230dp"
+        android:layout_height="200dp"
         android:layout_below="@id/menuBar"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
@@ -198,17 +198,17 @@
         android:layout_width="match_parent"
         android:layout_height="2dp" />
 
-    <!--BUTTON Ally Change-->
+    <!--BUTTON Apply Change-->
     <Button
     android:id="@+id/ally_changes_btn"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/product_price_maintain"
-    android:text="Ally Changes"
+    android:text="Apply Changes"
     android:layout_marginRight="45dp"
     android:layout_marginLeft="45dp"
     android:padding="17dp"
-    android:layout_marginTop="25dp"
+    android:layout_marginTop="30dp"
     android:textSize="18sp"
     android:textAllCaps="false"
     android:textColor="@color/white"
@@ -224,7 +224,7 @@
         android:layout_marginRight="45dp"
         android:layout_marginLeft="45dp"
         android:padding="17dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:textSize="18sp"
         android:textAllCaps="false"
         android:textColor="@color/white"

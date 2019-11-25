@@ -16,7 +16,7 @@ public class AdminCategory extends AppCompatActivity {
 
     private ImageView imgCake,  imgCrossant;
     private ImageView imgLightmeal, imgDessert;
-    private ImageButton LogoutBtn, CheckOrdersBtn, maintainProductBtn, maintainProductBtn2, maintainProductBtn3, maintainProductBtn4;
+    private ImageButton BtnBack, CheckOrdersBtn, maintainProductBtn, maintainProductBtn2, maintainProductBtn3, maintainProductBtn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,16 @@ public class AdminCategory extends AppCompatActivity {
         imgCrossant = (ImageView)findViewById(R.id.imgCrossant);
         imgLightmeal= (ImageView)findViewById(R.id.imgLightmeal);
         imgDessert = (ImageView)findViewById(R.id.imgDessert);
-        LogoutBtn = findViewById(R.id.admin_logout);
         CheckOrdersBtn = findViewById(R.id.admin_check_orders);
+        BtnBack = findViewById(R.id.back);
+
+        //Btn back
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         //Admin-Maintain Cake
         maintainProductBtn = findViewById(R.id.admin_maintain);
@@ -123,15 +131,6 @@ public class AdminCategory extends AppCompatActivity {
             }
         });
 
-        LogoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminCategory.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         CheckOrdersBtn.setOnClickListener(new View.OnClickListener() {
             @Override
