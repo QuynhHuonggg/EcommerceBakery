@@ -21,15 +21,17 @@
         android:splitMotionEvents="false">
 
         <ImageButton
-            android:id="@+id/admin_check_orders"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/home_btn_menu_height"
+            android:id="@+id/back"
             android:background="@null"
-            android:paddingLeft="@dimen/home_btn_menu_padding"
-            android:paddingTop="@dimen/home_btn_menu_padding"
-            android:paddingBottom="@dimen/home_btn_menu_padding"
+            android:src="@drawable/btn_back"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_admin_check_orders" />
+            android:paddingLeft="10dp"
+            android:paddingRight="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp" />
 
         <TextView
             android:id="@+id/title"
@@ -42,7 +44,7 @@
             android:textColor="@color/white" />
 
         <ImageButton
-            android:id="@+id/admin_logout"
+            android:id="@+id/admin_check_orders"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
@@ -55,7 +57,23 @@
             android:paddingTop="@dimen/home_btn_menu_padding"
             android:paddingBottom="18dp"
             android:scaleType="center"
-            app:srcCompat="@drawable/ic_admin_logout" />
+            app:srcCompat="@drawable/ic_admin_check_orders"/>
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/admin_logout"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_marginEnd="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:background="@color/dark_green"-->
+            <!--android:paddingLeft="@dimen/home_btn_menu_padding"-->
+            <!--android:paddingTop="@dimen/home_btn_menu_padding"-->
+            <!--android:paddingBottom="18dp"-->
+            <!--android:scaleType="center"-->
+            <!--app:srcCompat="@drawable/ic_admin_logout" />-->
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/buttonBar"
@@ -100,8 +118,8 @@
             android:id="@+id/admin_maintain3"
             android:layout_width="50dp"
             android:layout_height="@dimen/home_btn_menu_height"
-            android:layout_marginStart="66dp"
-            android:layout_marginLeft="66dp"
+            android:layout_marginStart="61dp"
+            android:layout_marginLeft="61dp"
             android:layout_marginEnd="60dp"
             android:layout_marginRight="60dp"
             android:layout_toEndOf="@+id/admin_maintain2"
@@ -189,7 +207,7 @@
                 <ImageView
                     android:id="@+id/imgCake"
                     android:layout_width="wrap_content"
-                    android:layout_height="116dp"
+                    android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
                     android:paddingTop="10dp"
@@ -197,7 +215,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:background="@color/chill"
                     android:text="Cake"
                     android:gravity="center"
@@ -229,16 +247,16 @@
                 <ImageView
                     android:id="@+id/imgCrossant"
                     android:layout_width="wrap_content"
-                    android:layout_height="116dp"
+                    android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
                     android:src="@drawable/icon_crossant" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:background="@color/chill"
-                    android:text="Crossant"
+                    android:text="Croissant"
                     android:gravity="center"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -268,20 +286,20 @@
                 <ImageView
                     android:id="@+id/imgLightmeal"
                     android:layout_width="wrap_content"
-                    android:layout_height="116dp"
+                    android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
                     android:src="@drawable/icon_lightmeal" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:background="@color/chill"
                     android:gravity="center"
                     android:text="Light Meal"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -307,20 +325,20 @@
                 <ImageView
                     android:id="@+id/imgDessert"
                     android:layout_width="wrap_content"
-                    android:layout_height="116dp"
+                    android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
                     android:src="@drawable/icon_dessert" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:background="@color/chill"
                     android:gravity="center"
                     android:text="Dessert"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
             </LinearLayout>
 

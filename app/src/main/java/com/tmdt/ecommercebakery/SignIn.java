@@ -137,7 +137,7 @@ public class SignIn extends AppCompatActivity {
                                 Toast.makeText(SignIn.this, "Welcome Admin, you are logged in successfully!", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(SignIn.this, AdminCategory.class);
+                                Intent intent = new Intent(SignIn.this, AdminHome.class);
                                 startActivity(intent);
                             }
                             else if (parentDbName.equals("Users")) {
