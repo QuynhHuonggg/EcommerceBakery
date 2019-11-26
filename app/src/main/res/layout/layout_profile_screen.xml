@@ -279,6 +279,23 @@
             android:background="@color/gray"
             android:layout_width="match_parent"
             android:layout_height="2dp" />
+
+        <!--Set security questions-->
+        <Button
+            android:id="@+id/security_questions_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pass_under"
+            android:text="Set Security Questions"
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="45dp"
+            android:padding="17dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_btn"
+            />
     </RelativeLayout>
 
 </RelativeLayout>

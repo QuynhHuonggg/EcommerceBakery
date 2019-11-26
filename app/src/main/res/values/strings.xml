@@ -67,6 +67,14 @@
 
     <string name="event_title">Event</string>
 
+    <string name="reset_pass_title">Reset Password</string>
+    <string name="reset_pass_find_phone">Please write your phone number</string>
+    <string name="reset_pass_answer_ques">Answer The Following Security Questions?</string>
+    <string name="reset_pass_ques1_title">Question 1</string>
+    <string name="reset_pass_question_1">Where did your parents first meet?</string>
+    <string name="reset_pass_ques2_title">Question 2</string>
+    <string name="reset_pass_question_2">Which film did you first watch?</string>
+
     <string name="profile_title">Profile</string>
     <string name="name">NAME</string>
     <string name="enter_name">Enter your name</string>

@@ -32,7 +32,7 @@ public class SignIn extends AppCompatActivity {
 
     private EditText edt_phone, edt_pass;
     private Button btn_sign_in;
-    private TextView AdminLink, NotAdminLink;
+    private TextView AdminLink, NotAdminLink, ForgetPasswordLink;
     private ProgressDialog loadingBar;
 
     private String parentDbName = "Users";
@@ -57,6 +57,7 @@ public class SignIn extends AppCompatActivity {
         btn_sign_in = findViewById(R.id.btn_sign_in);
         AdminLink = findViewById(R.id.admin_panel);
         NotAdminLink = findViewById(R.id.not_admin_panel);
+        ForgetPasswordLink = findViewById(R.id.forget_password_link);
 
         loadingBar =  new ProgressDialog(this);
 
@@ -68,6 +69,16 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 LoginUser();
+            }
+        });
+
+        //Forget Password
+        ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignIn.this, ResetPassword.class);
+                intent.putExtra("check", "login");
+                startActivity(intent);
             }
         });
 

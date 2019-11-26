@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -42,6 +43,7 @@ public class ProfileScreen extends AppCompatActivity {
     private ImageView ProfileImage;
     private ImageButton ButtonBack, BtnPass,BtnUpdate;
     private EditText fullNameEditText, userPhoneEditText, emailEditText;
+    private Button securityQuestionBtn;
 
     private Uri imageUri;
     private String myUrl = "";
@@ -73,6 +75,7 @@ public class ProfileScreen extends AppCompatActivity {
         fullNameEditText = findViewById(R.id.name);
         userPhoneEditText = findViewById(R.id.phone);
         emailEditText = findViewById(R.id.email);
+        securityQuestionBtn = findViewById(R.id.security_questions_btn);
 
         //Go back to home
         ButtonBack.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +94,16 @@ public class ProfileScreen extends AppCompatActivity {
                 else {
                     updateOnlyUserInfo();
                 }
+            }
+        });
+
+        //Security Questions
+        securityQuestionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileScreen.this, ResetPassword.class);
+                intent.putExtra("check", "settings");
+                startActivity(intent);
             }
         });
 
