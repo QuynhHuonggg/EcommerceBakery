@@ -112,6 +112,8 @@ public class AdminHome extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_events) {
+            Intent intent = new Intent(AdminHome.this, AdminAddEvent.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_comment) {
 

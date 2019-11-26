@@ -60,12 +60,12 @@
         </RelativeLayout>
 
         <!--<SearchView-->
-            <!--android:id="@+id/searchView"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:queryHint="Search Here"-->
-            <!--android:iconifiedByDefault="false"-->
-            <!--android:layout_alignParentTop="true">-->
+        <!--android:id="@+id/searchView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:queryHint="Search Here"-->
+        <!--android:iconifiedByDefault="false"-->
+        <!--android:layout_alignParentTop="true">-->
         <!--</SearchView>-->
 
         <LinearLayout

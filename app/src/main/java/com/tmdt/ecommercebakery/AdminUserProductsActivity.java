@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rey.material.widget.ImageButton;
 import com.tmdt.ecommercebakery.Model.Cart;
 import com.tmdt.ecommercebakery.ViewHolder.CartViewHolder;
 
@@ -26,9 +28,8 @@ public class AdminUserProductsActivity extends AppCompatActivity {
     private RecyclerView productsList;
     RecyclerView.LayoutManager layoutManager;
     private DatabaseReference cartListRef;
-
     private String userID = "";
-
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -44,7 +45,13 @@ public class AdminUserProductsActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
+
+
+
         userID = getIntent().getStringExtra("uid");
+
+
+
 
         productsList = findViewById(R.id.products_list);
         productsList.setHasFixedSize(true);

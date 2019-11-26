@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -55,9 +54,6 @@ public class ProductScreen extends AppCompatActivity {
         setContentView(R.layout.layout_product_screen);
 
 
-        btnCroissant = findViewById(R.id.btnCroissant);
-        btnDessert = findViewById(R.id.btnDessert);
-        btnLightMeal = findViewById(R.id.btnLightMeal);
 
         //Admin-Maintain
         Intent intent = getIntent();
@@ -80,79 +76,55 @@ public class ProductScreen extends AppCompatActivity {
         });
 
 
+        ///
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
-        
 
-        //Admin-Maintain
+
         BackButton = findViewById(R.id.back);
+
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(type.equals("Admin"))
-                {
-                    Intent intent = new Intent(ProductScreen.this, AdminCategory.class);
-                    startActivity(intent);
-                    finish();
-                }else{
-                    Intent intent = new Intent(ProductScreen.this, Home.class);
-                    startActivity(intent);
-                    finish();
-                }
-
-
+                Intent intent = new Intent(ProductScreen.this, Home.class);
+                startActivity(intent);
+                finish();
             }
         });
-        //Admin-Maintain
-            btnCroissant.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-                    if(type.equals("Admin"))
-                    {
-                        Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
-                        intent.putExtra("Admin", "Admin");
-                        startActivity(intent);
-                    }else{
-                        Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
-                        startActivity(intent);
-                    }
+        btnCroissant = findViewById(R.id.btnCroissant);
 
-                }
-            });
-            btnLightMeal.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(type.equals("Admin"))
-                    {
-                        Intent intent = new Intent(ProductScreen.this, ProductScreen3.class);
-                        intent.putExtra("Admin", "Admin");
-                        startActivity(intent);
-                    }else{
-                        Intent intent = new Intent(ProductScreen.this, ProductScreen3.class);
-                        startActivity(intent);
-                    }
-                }
-            });
-            btnDessert.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(type.equals("Admin"))
-                    {
-                        Intent intent = new Intent(ProductScreen.this, ProductScreen4.class);
-                        intent.putExtra("Admin", "Admin");
-                        startActivity(intent);
-                    }else{
-                        Intent intent = new Intent(ProductScreen.this, ProductScreen4.class);
-                        startActivity(intent);
-                    }
-                }
-            });
+        btnCroissant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
+                startActivity(intent);
+            }
+        });
 
+        btnLightMeal = findViewById(R.id.btnLightMeal);
+
+        btnLightMeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen.this, ProductScreen3.class);
+                startActivity(intent);
+            }
+        });
+
+        btnDessert = findViewById(R.id.btnDessert);
+
+        btnDessert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductScreen.this, ProductScreen4.class);
+                startActivity(intent);
+            }
+        });
 
         /// Search
         inputText = findViewById(R.id.search_product_name);
@@ -166,18 +138,17 @@ public class ProductScreen extends AppCompatActivity {
                 SearchInput = inputText.getText().toString();
                 onStart();
             }
-        });
+        });//////////
 
-        //Sửa chỗ này
+        //sửa chỗ này
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
-
         BtnCart = findViewById(R.id.cart_imageButton);
+
         BtnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -209,7 +180,7 @@ public class ProductScreen extends AppCompatActivity {
                         holder.txtProductPrice.setText("Price: " + model.getPrice() + "VND");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
-                    //Admin-Maintain
+                        //Admin-Maintain
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {

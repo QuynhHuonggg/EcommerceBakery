@@ -155,6 +155,8 @@ public class Home extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_events) {
+            Intent intent = new Intent(Home.this, EventScreen.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_contact) {
             Intent intent = new Intent(Home.this, ContactScreen.class);
