@@ -53,6 +53,10 @@ public class ProductScreen4 extends AppCompatActivity {
         setContentView(R.layout.layout_product_screen4);
 
 
+        btnCroissant = findViewById(R.id.btnCroissant);
+        btnDessert = findViewById(R.id.btnDessert);
+        btnLightMeal = findViewById(R.id.btnLightMeal);
+        btnCake = findViewById(R.id.btnCake);
 
         //Admin-Maintain
         Intent intent = getIntent();
@@ -83,57 +87,68 @@ public class ProductScreen4 extends AppCompatActivity {
             actionBar.hide();
         }
 
+        //Admin-Maintain
         BackButton = findViewById(R.id.back);
-
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen4.this, Home.class);
-                startActivity(intent);
-                finish();
+                if(type.equals("Admin"))
+                {
+                    Intent intent = new Intent(ProductScreen4.this, AdminCategory.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent = new Intent(ProductScreen4.this, Home.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
-
-        btnCake = findViewById(R.id.btnCake);
-
+        //Admin-Maintain
         btnCake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen4.this, ProductScreen.class);
-                startActivity(intent);
+
+                if(type.equals("Admin"))
+                {
+                    Intent intent = new Intent(ProductScreen4.this, ProductScreen.class);
+                    intent.putExtra("Admin", "Admin");
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(ProductScreen4.this, ProductScreen.class);
+                    startActivity(intent);
+                }
+
             }
         });
-
-        btnCroissant = findViewById(R.id.btnCroissant);
-
-        btnCroissant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen4.this, ProductScreen2.class);
-                startActivity(intent);
-            }
-        });
-
-        btnLightMeal = findViewById(R.id.btnLightMeal);
-
         btnLightMeal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen4.this, ProductScreen3.class);
-                startActivity(intent);
+                if(type.equals("Admin"))
+                {
+                    Intent intent = new Intent(ProductScreen4.this, ProductScreen3.class);
+                    intent.putExtra("Admin", "Admin");
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(ProductScreen4.this, ProductScreen3.class);
+                    startActivity(intent);
+                }
             }
         });
-
-        btnDessert = findViewById(R.id.btnDessert);
-
-        btnDessert.setOnClickListener(new View.OnClickListener() {
+        btnCroissant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen4.this, ProductScreen4.class);
-                startActivity(intent);
+                if(type.equals("Admin"))
+                {
+                    Intent intent = new Intent(ProductScreen4.this, ProductScreen2.class);
+                    intent.putExtra("Admin", "Admin");
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(ProductScreen4.this, ProductScreen2.class);
+                    startActivity(intent);
+                }
             }
         });
-
         /// Search
         inputText = findViewById(R.id.search_product_name);
         SearchBtn = findViewById(R.id.search_btn);

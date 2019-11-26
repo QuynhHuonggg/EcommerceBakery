@@ -70,7 +70,7 @@
         android:text="@string/event"
         android:textSize="@dimen/product_size"
         android:textColor="@color/black"
-        android:id="@+id/event_name"
+        android:id="@+id/tvEvent_name"
         android:layout_toRightOf="@id/event_icon"
         android:layout_alignTop="@id/event_icon"
         android:textAllCaps="true"
@@ -79,7 +79,7 @@
     <EditText
         android:id="@+id/edtEventName"
         android:textSize="@dimen/sign_text_size2"
-        android:layout_below="@id/event_name"
+        android:layout_below="@id/tvEvent_name"
         android:layout_toRightOf="@id/event_icon"
         android:layout_alignBottom="@id/event_icon"
         android:gravity="center_vertical"
@@ -153,7 +153,7 @@
 
     <!--BUTTON ADD PRODUCT-->
     <Button
-        android:id="@+id/add_new_product"
+        android:id="@+id/add_new_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edtEventDescription"

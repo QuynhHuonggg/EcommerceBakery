@@ -108,6 +108,7 @@
     <string name="new_event">New Event</string>
     <string name="event">Event</string>
     <string name="enter_event">Enter event</string>
+    <string name="event_value">Khuyến Mãi</string>
 
     <string name="search_title">Search</string>
     <string name="title_activity_admin_home">AdminHome</string>

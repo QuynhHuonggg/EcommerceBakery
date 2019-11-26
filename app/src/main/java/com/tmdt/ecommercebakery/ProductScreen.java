@@ -83,7 +83,7 @@ public class ProductScreen extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
-        
+
 
         BackButton = findViewById(R.id.back);
 
@@ -101,8 +101,8 @@ public class ProductScreen extends AppCompatActivity {
         btnCroissant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
-                    startActivity(intent);
+                Intent intent = new Intent(ProductScreen.this, ProductScreen2.class);
+                startActivity(intent);
             }
         });
 
@@ -180,7 +180,7 @@ public class ProductScreen extends AppCompatActivity {
                         holder.txtProductPrice.setText("Price: " + model.getPrice() + "VND");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
-                    //Admin-Maintain
+                        //Admin-Maintain
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
