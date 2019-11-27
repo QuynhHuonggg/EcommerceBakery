@@ -90,8 +90,7 @@ public class ProductScreen extends AppCompatActivity {
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductScreen.this, Home.class);
-                startActivity(intent);
+
                 finish();
             }
         });
